@@ -333,11 +333,8 @@ imgResize<-function(img,wid,hei,filename){
   load<-load.image(img)
   y <- resize(load,wid,hei)
   plot(y)
-  x<-"C:/Users/RM A-225/Documents/augmented_images/"
-  savefile<-paste(x,filename)
-  save.image(image,savefile)
 }
-imgResize('C:/Users/Public/Pictures/Sample Pictures/sotrnew.jpg',25,25,"resize.jpg")
+imgResize("C:/Users/Public/Pictures/Sample Pictures/Chrysanthemum.jpg",25,25)
 
 
 #2.2
@@ -363,16 +360,15 @@ rotImg<-function(addr, deg){
 rotImg('C:/Users/Public/Pictures/Sample Pictures/SOTR.png',90)
 
 #3
-saveImg<-function(addr,filename){
-  library(imager)
-  image <- load.image(addr)
+imgResizewithSave<-function(img,wid,hei,filename){
+  load<-load.image(img)
+  y <- resize(load,wid,hei)
+  plot(y)
   x<-"C:/Users/RM A-225/Documents/augmented_images/"
   savefile<-paste(x,filename)
-  save.image(image,savefile)
+  save.image(y,savefile)
 }
-dis_photo<-load.image('C:/Users/Public/Pictures/Sample Pictures/Chrysanthemum.jpg')
-resized<-resize(dis_photo,25,25)
-saveImg(resized,"try4.jpg")
+imgResizewithSave("C:/Users/Public/Pictures/Sample Pictures/Chrysanthemum.jpg",25,25,"resize2.jpg")
 
 
 
